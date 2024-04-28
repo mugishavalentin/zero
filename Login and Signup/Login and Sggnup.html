@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Logn in & Signup Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="verify()">
+    <section class=" wrapper">
+        <div class="form Signup">
+            <header>Signup</header>
+            <form action="#">
+                <input type="text" placeholder="Username" required/>
+                <input type="text" placeholder="Email address" required/>
+                <input type="password" placeholder="Password" required/>
+                <input type="Re-password" placeholder="Re-Password" required/>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="Signupcheck"/>
+                    <label for="">I accept all terms & conditions</label>
+                </div>
+                <input type="submit" value="Signup"/>
+    </form>
+    </div>
+
+
+    <div class="form Login">
+        <header>Login</header>
+        <form action="#">
+            
+            <input type="text" placeholder="Email address" required/>
+            <input type="password" placeholder="Password" required/>
+            <a href="">Forgot Password?</a>
+             <input type="submit" value="Login"/>
+
+            <script>
+                const wrapper = document.querySelector(".wrapper"),
+                SignupHeader = document.querySelector(".Signup header");
+                LoginHeader = document.querySelector(".Login header");
+
+                
+
+                LoginHeader.addEventListener("click", () =>{
+                    wrapper.classList.add("active");
+                });
+                SignupHeader.addEventListener("click", () =>{
+                    wrapper.classList.remove("active");
+                    
+                });
+
+                function verify() {
+                    var url = window.location.href;
+                    url = url.split('?');
+                    url = url[1];
+
+                    if (url == "login"){
+                        LoginHeader.click();
+                    }
+                }
+            </script> 
+ 
+</section> 
+</body>
+</html>
